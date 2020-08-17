@@ -58,12 +58,11 @@ const log = async (lastCommit, onCommit) => {
     if(lastCommit) {
       args.push(`${lastCommit}..`);
     }
-    const gitProc = spawn('git', args, { cwd: repoPath }).pipe(StreamSplitter("\n"));
+    const gitProc = spawn('git', args, { cwd: repoPath }).stdout.pipe(StreamSplitter("\n"));
     gitProc.encoding = "utf8";
 
     gitProc.on('token', async (data) => {
-      const lines = data.toString().split(/(\r?\n)/g);
-            .split('\n')
+      const lines = data.toString().split(/(\r?\n)/g)
             .map(s => s.replace(/^"(.+?)"$/gi, "$1"))
             .filter(s => s);
       for(let line of lines) {
