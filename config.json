@@ -1,0 +1,18 @@
+{
+  "repos": [
+    {
+      "name": "Some repo",
+      "path": "../Linux-Fake-Background-Webcam master"
+    }
+  ],
+  "aliases": {
+    "Some user": [ "someuser1@somewhere.com","some-user1@somewhere.com" ]
+  },
+  "team": [
+    "Some user" ],
+  "fileExtensions": {
+    "backend": [ "*.java","*.go" ],
+    "frontend": [ "*.js","*.ts","*.html","*.css","*.scss" ],
+    "database": [ "*.sql" ]
+  }
+}
